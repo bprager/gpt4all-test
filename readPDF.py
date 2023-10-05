@@ -37,10 +37,7 @@ def main():
     # create embeddings
     embeddings = GPT4AllEmbeddings()
     # PGVector needs the connection string to the database.
-    # pyright: ignoreReportUnusedVariable
-    CONNECTION_STRING = (
-        "postgresql+psycopg2://postgres:postgres@localhost:5432/postgres"
-    )
+    CONNECTION_STRING = "postgresql+psycopg2://postgres:postgres@localhost:5432/postgres"  # NOSONAR (Disable SonarLint warning)
 
     knowledge_base = PGVector.from_texts(
         connection_string=CONNECTION_STRING,

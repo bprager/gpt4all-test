@@ -48,12 +48,6 @@ def main():
     with workaround.suppress_stdout_stderr():
         output = model.generate(prompt, max_tokens=42, temp=0.6)
     logging.info(f"Answer 2: (with temp=0.6) {output}")
-    return
-    # Add embeddings
-    gpt4all_embd = GPT4AllEmbeddings()
-    embedding = gpt4all_embd.embed_query(prompt)
-    logging.debug(embedding)
-    # Query embeddings from vector store
 
 
 if __name__ == "__main__":

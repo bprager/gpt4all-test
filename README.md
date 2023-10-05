@@ -13,7 +13,6 @@ LangChain experiment with GPT4All and Postgres as vector store
  cd pgvector/
  apt-get install make gcc postgresql-server-dev-16
  make
- ls
  make install
  exit
  PGPASSWORD=postgres psql --host localhost --user postgres postgres
@@ -21,3 +20,11 @@ LangChain experiment with GPT4All and Postgres as vector store
     VERSION "0.5.0";
  \q
 ```
+
+## Various tests
+
+- Ask OpenAI to tell a joke (openAI.py)
+- Ask Llama about "Hello world" (llama_test.py)
+- Ask Falcon about "Hello world" (falcon_test.py)
+- Read PDF file into a vector store (readPDF.py)
+- Chain a similarity search in the vector back to the LLM (llama_embeddings_test.py)
