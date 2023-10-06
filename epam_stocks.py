@@ -18,7 +18,7 @@ load_dotenv()
 
 def main():
     logging.debug("Loading model ...")
-    llm = OpenAI(temperature=0.7)
+    llm = OpenAI(temperature=0.2)
     # Prepare agent
     tools = [YahooFinanceNewsTool()]
     agent_chain = initialize_agent(

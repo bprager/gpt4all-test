@@ -43,17 +43,11 @@ def main():
     prompt = prompt_template.format(content="Hello World!")
     logging.debug("Start prompt ...")
     with workaround.suppress_stdout_stderr():
-        output = model.generate(prompt, max_tokens=42, temp=0.2)
-    logging.info(f"Answer 1 (with temp=0.2): {output}")
+        output = model.generate(prompt, max_tokens=42, temp=0.1)
+    logging.info(f"Answer 1 (with temp=0.1): {output}")
     with workaround.suppress_stdout_stderr():
-        output = model.generate(prompt, max_tokens=42, temp=0.6)
-    logging.info(f"Answer 2: (with temp=0.6) {output}")
-    return
-    # Add embeddings
-    gpt4all_embd = GPT4AllEmbeddings()
-    embedding = gpt4all_embd.embed_query(prompt)
-    logging.debug(embedding)
-    # Query embeddings from vector store
+        output = model.generate(prompt, max_tokens=42, temp=0.9)
+    logging.info(f"Answer 2: (with temp=0.9) {output}")
 
 
 if __name__ == "__main__":
